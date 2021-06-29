@@ -33,7 +33,7 @@ import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 
 /**
- * Weather Forecast
+ * Weather Forecast with list RecyclerView.
  */
 class FutureWeatherListFragment : Fragment(),
    FutureWeatherListAdapter.OnItemClickListenerRecyclerView {

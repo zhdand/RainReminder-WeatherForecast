@@ -29,7 +29,7 @@ import com.google.android.gms.location.*
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * Current weather fragment - default destination in the navigation.
  */
 class CurrentWeatherFragment : Fragment() {
 

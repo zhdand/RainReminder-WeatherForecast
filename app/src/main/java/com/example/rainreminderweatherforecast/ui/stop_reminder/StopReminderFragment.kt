@@ -13,6 +13,9 @@ import com.example.rainreminderweatherforecast.service.AlarmService
 import com.google.android.material.button.MaterialButton
 import javax.inject.Inject
 
+/**
+ * A fragment to stop a reminder.
+ */
 class StopReminderFragment : Fragment(R.layout.stop_reminder_fragment) {
 
    companion object {

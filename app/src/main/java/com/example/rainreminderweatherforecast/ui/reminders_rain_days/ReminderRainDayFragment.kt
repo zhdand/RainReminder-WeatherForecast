@@ -13,7 +13,7 @@ import com.google.android.material.button.MaterialButton
 import javax.inject.Inject
 
 /**
- * A fragment representing a list of Reminders.
+ * A fragment representing a list of rain days reminders.
  */
 class ReminderRainDayFragment : Fragment(R.layout.fragment_list_reminder_rain_day) {
 
