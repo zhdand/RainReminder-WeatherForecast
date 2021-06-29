@@ -1,9 +1,5 @@
 package com.example.rainreminderweatherforecast.repository.providers.preferences
 
-import org.junit.Test
-
-import org.junit.Assert.*
-
 class FakePreferencesProvider : IPreferencesProvider {
 
    private var isUsingCurrentDevicesLocation = true

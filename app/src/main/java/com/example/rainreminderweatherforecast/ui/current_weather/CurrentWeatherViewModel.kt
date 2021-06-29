@@ -9,8 +9,8 @@ import com.example.rainreminderweatherforecast.domain.models.CurrentWeather
 import com.example.rainreminderweatherforecast.domain.usecases.*
 import com.example.rainreminderweatherforecast.domain.usecases.IGetPreferencesUseCase
 import com.example.rainreminderweatherforecast.repository.providers.internet_connection.ResultNetworkAvailableState
+import com.example.rainreminderweatherforecast.utils.ICoroutinesDispatchersWrapper
 import com.example.rainreminderweatherforecast.utils.ResultWrapper
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -22,7 +22,7 @@ class CurrentWeatherViewModel
    isNetworkAvailableUseCase: IsNetworkAvailableUseCase,
    preferencesUseCase: IGetPreferencesUseCase,
    private val isCityOrCountryEmptyInSettingsUseCase: IsCityOrCountryEmptyInSettingsUseCase,
-   private val dispatcher: CoroutineDispatcher,
+   private val dispatcher: ICoroutinesDispatchersWrapper,
 ) : ViewModel() {
 
    var isNetworkAvailable: LiveData<ResultNetworkAvailableState>
@@ -51,7 +51,7 @@ class CurrentWeatherViewModel
     * or the location is set manually in the  settings.
     */
    fun getCurrentWeather() {
-      viewModelScope.launch(dispatcher) {
+      viewModelScope.launch(dispatcher.io) {
          when {
             preferences.isUsingCurrentDeviceLocation() ->
                getCurrentWeatherFromNetworkUseCase()

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.rainreminderweatherforecast.domain.usecases.*
 import com.example.rainreminderweatherforecast.domain.usecases.IGetPreferencesUseCase
-import kotlinx.coroutines.CoroutineDispatcher
+import com.example.rainreminderweatherforecast.utils.ICoroutinesDispatchersWrapper
 import java.lang.IllegalArgumentException
 import javax.inject.Inject
 
@@ -17,7 +17,7 @@ class CurrentWeatherViewModelFactory
    private val isNetworkAvailableUseCase: IsNetworkAvailableUseCase,
    private val preferencesUseCase: IGetPreferencesUseCase,
    private val isCityOrCountryEmptyInSettingsUseCase: IsCityOrCountryEmptyInSettingsUseCase,
-   private val dispatcher: CoroutineDispatcher,
+   private val dispatcher: ICoroutinesDispatchersWrapper,
 ) : ViewModelProvider.Factory {
    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
       if (modelClass.isAssignableFrom(CurrentWeatherViewModel::class.java)) {

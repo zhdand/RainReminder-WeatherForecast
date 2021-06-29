@@ -1,5 +1,7 @@
 package com.example.rainreminderweatherforecast.ui.current_weather
 
+import com.example.rainreminderweatherforecast.utils.ICoroutinesDispatchersWrapper
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -12,8 +14,16 @@ import org.junit.runner.Description
 @ExperimentalCoroutinesApi
 class MyCoroutineTestRule constructor(
    val testDispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()
-//) : TestWatcher(), TestCoroutineScope by TestCoroutineScope(testDispatcher) {
 ) : TestWatcher() {
+
+   val testDispatchersWrapper: ICoroutinesDispatchersWrapper = object: ICoroutinesDispatchersWrapper{
+      override val main: CoroutineDispatcher
+         get() = testDispatcher
+      override val default: CoroutineDispatcher
+         get() = testDispatcher
+      override val io: CoroutineDispatcher
+         get() = testDispatcher
+   }
 
    override fun starting(description: Description?) {
       super.starting(description)

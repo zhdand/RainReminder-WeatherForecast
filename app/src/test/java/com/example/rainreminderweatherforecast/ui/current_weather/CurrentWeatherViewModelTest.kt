@@ -73,7 +73,6 @@ class CurrentWeatherViewModelTest {
       val currentWeatherLiveData = liveData { emit(currentWeather) }
       `when`(getCurrentWeatherFromDatabaseUseCase.invoke()).thenReturn(currentWeatherLiveData)
 
-
       viewModel = CurrentWeatherViewModel(
          getCurrentWeatherFromNetworkUseCase,
          getCurrentWeatherFromDatabaseUseCase,
@@ -81,7 +80,7 @@ class CurrentWeatherViewModelTest {
          isNetworkAvailableUseCase,
          fakePreferencesUseCase,
          isCityOrCountryEmptyInSettingsUseCase,
-         testCoroutineRule.testDispatcher
+         testCoroutineRule.testDispatchersWrapper
       )
 
       // WHEN

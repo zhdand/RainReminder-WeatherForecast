@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.rainreminderweatherforecast.domain.usecases.DeleteAllRemindersRainDaysUseCase
 import com.example.rainreminderweatherforecast.domain.usecases.DeleteOneReminderFromDatabaseUseCase
 import com.example.rainreminderweatherforecast.domain.usecases.GetAllRemindersRainDaysUseCase
+import com.example.rainreminderweatherforecast.utils.ICoroutinesDispatchersWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 
@@ -15,7 +16,7 @@ class ReminderRainDayViewModelFactory
    private val getAllRemindersRainDaysUseCase: GetAllRemindersRainDaysUseCase,
    private val deleteAllReminderRainDayDaysUseCase: DeleteAllRemindersRainDaysUseCase,
    private val deleteOneReminderFromDatabaseUseCase: DeleteOneReminderFromDatabaseUseCase,
-   private val dispatcher: CoroutineDispatcher
+   private val dispatcher: ICoroutinesDispatchersWrapper
 ) : ViewModelProvider.Factory {
    @Suppress("UNCHECKED_CAST")
    override fun <T : ViewModel?> create(modelClass: Class<T>): T {

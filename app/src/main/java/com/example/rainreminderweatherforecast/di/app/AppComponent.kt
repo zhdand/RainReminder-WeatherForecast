@@ -2,9 +2,7 @@ package com.example.rainreminderweatherforecast.di.app
 
 import android.app.Application
 import android.content.Context
-import com.example.rainreminderweatherforecast.di.app.*
 import com.example.rainreminderweatherforecast.di.current_weather.CurrentWeatherSubcomponent
-import com.example.rainreminderweatherforecast.di.factory.ViewModelFactory
 import com.example.rainreminderweatherforecast.di.factory.ViewModelFactoryModule
 import com.example.rainreminderweatherforecast.di.future_weather.FutureWeatherSubcomponent
 import com.example.rainreminderweatherforecast.di.reminder_rain_day.ReminderRainDaysSubcomponent
@@ -25,7 +23,7 @@ import javax.inject.Singleton
       IsNetworkAvailableProviderModule::class,
       PreferencesProviderModule::class,
       LocationProviderModule::class,
-      CoroutineDispatcherModule::class
+      CoroutinesDispatchersModule::class
    ]
 )
 interface AppComponent {
@@ -33,8 +31,6 @@ interface AppComponent {
    fun currentWeatherSubcomponent(): CurrentWeatherSubcomponent.Factory
    fun futureWeatherSubcomponent(): FutureWeatherSubcomponent.Factory
    fun reminderRainDaysSubcomponent(): ReminderRainDaysSubcomponent.Factory
-
-   fun getViewModel(): ViewModelFactory
 
    fun inject(stopReminderFragment: StopReminderFragment)
    fun inject(alarmService: AlarmService)

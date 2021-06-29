@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.rainreminderweatherforecast.domain.usecases.*
+import com.example.rainreminderweatherforecast.utils.ICoroutinesDispatchersWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import java.lang.IllegalArgumentException
 
@@ -16,7 +17,7 @@ class FutureWeatherListViewModelFactory(
    private val getNetworkResponseFutureWeatherUseCase: GetNetworkResponseFutureWeatherUseCase,
    private val isNetworkAvailableUseCase: IsNetworkAvailableUseCase,
    private val isCityOrCountryEmptyInSettingsUseCase: IsCityOrCountryEmptyInSettingsUseCase,
-   private val dispatcher: CoroutineDispatcher,
+   private val dispatcher: ICoroutinesDispatchersWrapper,
    private val preferencesUseCase: GetPreferencesUseCase
 ) : ViewModelProvider.Factory {
    override fun <T : ViewModel?> create(modelClass: Class<T>): T {

@@ -18,6 +18,7 @@ import com.example.rainreminderweatherforecast.domain.usecases.*
 import com.example.rainreminderweatherforecast.repository.providers.internet_connection.ResultNetworkAvailableState
 import com.example.rainreminderweatherforecast.utils.ResultWrapper
 import com.example.rainreminderweatherforecast.utils.Converter
+import com.example.rainreminderweatherforecast.utils.ICoroutinesDispatchersWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -31,7 +32,7 @@ class FutureWeatherListViewModel
    getNetworkResponseFutureWeatherUseCase: GetNetworkResponseFutureWeatherUseCase,
    isNetworkAvailableUseCase: IsNetworkAvailableUseCase,
    private val isCityOrCountryEmptyInSettingsUseCase: IsCityOrCountryEmptyInSettingsUseCase,
-   private val dispatcher: CoroutineDispatcher,
+   private val dispatcher: ICoroutinesDispatchersWrapper,
    preferencesUseCase: GetPreferencesUseCase
 ) : AndroidViewModel(mApplication) {
 
@@ -54,7 +55,7 @@ class FutureWeatherListViewModel
     * or the location is set manually in the  settings.
     */
    fun getFutureWeather() {
-      viewModelScope.launch(dispatcher) {
+      viewModelScope.launch(dispatcher.io) {
          when {
             preferences.isUsingCurrentDeviceLocation() ->
                getFutureWeatherFromNetworkUseCase()
@@ -76,7 +77,7 @@ class FutureWeatherListViewModel
     * Saves reminder in the database and sets an alarm
     */
    fun saveAlarm(reminderRainDay: ReminderRainDay) {
-      viewModelScope.launch(dispatcher) {
+      viewModelScope.launch(dispatcher.io) {
          addAlarmDayReminderToDatabaseUseCase(reminderRainDay)
       }
       setAlarm(reminderRainDay)

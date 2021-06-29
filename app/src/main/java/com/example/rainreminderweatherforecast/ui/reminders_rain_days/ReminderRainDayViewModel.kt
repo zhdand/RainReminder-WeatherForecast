@@ -10,6 +10,7 @@ import com.example.rainreminderweatherforecast.broadcastreceiver.MyAlarmReceiver
 import com.example.rainreminderweatherforecast.domain.usecases.DeleteAllRemindersRainDaysUseCase
 import com.example.rainreminderweatherforecast.domain.usecases.DeleteOneReminderFromDatabaseUseCase
 import com.example.rainreminderweatherforecast.domain.usecases.GetAllRemindersRainDaysUseCase
+import com.example.rainreminderweatherforecast.utils.ICoroutinesDispatchersWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,7 +21,7 @@ class ReminderRainDayViewModel
    getAllRemindersRainDaysUseCase: GetAllRemindersRainDaysUseCase,
    private val deleteAllReminderRainDayDaysUseCase: DeleteAllRemindersRainDaysUseCase,
    private val deleteOneReminderFromDatabaseUseCase: DeleteOneReminderFromDatabaseUseCase,
-   private val dispatcher: CoroutineDispatcher
+   private val dispatcher: ICoroutinesDispatchersWrapper
 ) : AndroidViewModel(mApplication) {
 
    val reminders = getAllRemindersRainDaysUseCase()
@@ -29,7 +30,7 @@ class ReminderRainDayViewModel
     * Deletes all reminders from the database and cancels all alarms.
     */
    fun clearAllRemindersRainDays() {
-      viewModelScope.launch(dispatcher) {
+      viewModelScope.launch(dispatcher.io) {
          deleteAllReminderRainDayDaysUseCase()
       }
       cancelAllAlarms()
@@ -70,7 +71,7 @@ class ReminderRainDayViewModel
     * @param id - is specific for each reminder.
     */
    private fun deleteOneReminderFromDatabase(id: Int) {
-      viewModelScope.launch(dispatcher) {
+      viewModelScope.launch(dispatcher.io) {
          deleteOneReminderFromDatabaseUseCase(id)
       }
    }
