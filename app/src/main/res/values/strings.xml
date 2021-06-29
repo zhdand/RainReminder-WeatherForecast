@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">MyWeatherApp</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="fragment_label_current_weather">Current weather</string>
+    <string name="fragment_label_weather_forecast">Weather forecast</string>
+
+    <string name="city_name">City name</string>
+    <string name="temperature">Temperature</string>
+    <string name="description">Description</string>
+
+    <string name="fragment_label_remind_rain_days">Rainy days reminders</string>
+
+    <!-- CurrentWeatherFragment-->
+    <string name="current_image_weather">Image weather</string>
+    <string name="current_precipitation">Precipitation</string>
+    <string name="current_wind">Wind</string>
+    <string name="current_degrees_celsius">℃</string>
+
+    <!--FutureWeatherFragment-->
+    <string name="future_fragment_city_name">City: \ </string>
+    <string name="reminder_title_time_picker_set_reminder_for_date">Set a reminder for</string>
+
+    <!--    Menu-->
+    <string name="menu_item_current">Current</string>
+    <string name="menu_item_forecast">Forecast</string>
+    <string name="menu_item_rain_reminders">Reminders</string>
+    <string name="menu_item_settings">Settings</string>
+
+    <!--    Preferences category-->
+    <string name="pref_category_location">Location</string>
+    <string name="pref_category_time">Time</string>
+    <string name="pref_category_message">Message</string>
+
+    <!-- Preference Titles -->
+    <string name="pref_title_current_location">Current location</string>
+    <string name="pref_title_use_custom_location">Custom location</string>
+    <string name="pref_title_country">Country</string>
+    <string name="pref_title_city_name">City name</string>
+    <string name="pref_title_default_time">Default time (format 07:30)</string>
+    <string name="pref_title_message_for_reminder">Message for reminder</string>
+
+    <!--    Preferences Summary-->
+    <string name="pref_summary_memorize_last_city">Memorize the last city</string>
+
+    <!--    Preferences by default-->
+    <string name="pref_message_by_default_take_umbrella">Take an umbrella. It\'s going to rain.</string>
+    <string name="pref_time_reminder_by_default">07:30</string>
+
+    <!--    Preferences messages-->
+    <string name="pref_message_enter_valid_time">Please enter a valid time</string>
+    <string name="pref_message_summary_set_valid_time">Set a valid time</string>
+    <string name="message_location_permission_granted">Location permission granted</string>
+
+    <!--    Permission-->
+    <string name="permission_rationale_title">Location permission</string>
+    <string name="permission_rationale_message">"In order to get you current device location you have to enable location permission. If you don't want to you can specify you custom location in the settings.\n Enable location permission? </string>
+    <string name="permission_rationale_button_yes">Yes</string>
+    <string name="permission_rationale_button_cancel">Cancel</string>
+    <string name="permission_rationale_button_custom">Custom</string>
+    <string name="permission_rationale_toast_unable_location_permission">Unable to take current location without location permission.</string>
+
+    <!--    Messages-->
+    <string name="message_enter_city_name">Please enter the city name</string>
+    <string name="message_internet_is_disconnected">Internet is disconnected</string>
+    <string name="message_error_empty_city_in_settings">Please enter the city and country name in the settings</string>
+    <string name="message_repository_network_error">Network error</string>
+    <string name="message_network_enter_correct_city_name">Please enter the correct city and country name in the settings.</string>
+    <string name="message_reminder_is_set_on">The reminder is set on \ </string>
+
+    <!--    Buttons-->
+    <string name="button_stop_reminder_ok">OK</string>
+    <string name="button_reminders_clear_all">CLEAR ALL</string>
+    <string name="notification_title">Reminder rain days</string>
+    <string name="message_time_picker_enter_time_grater_than_current">Please enter a time greater than the current time</string>
+
+</resources>

@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.rainreminderweatherforecast.ui.MainActivity">
+
+    <item android:id="@+id/CurrentFragment"
+        android:title="@string/menu_item_current"
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_current_weather"/>
+
+    <item android:id="@+id/FutureFragment"
+        android:title="@string/menu_item_forecast"
+        app:showAsAction="always"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_forecast"/>
+
+    <item android:id="@+id/ReminderRainFragment"
+        android:title="@string/menu_item_rain_reminders"
+        app:showAsAction="always"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_alarm"/>
+
+    <item
+        android:id="@+id/SettingsFragment"
+        android:orderInCategory="4"
+        android:title="@string/menu_item_settings"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_settings"/>
+</menu>

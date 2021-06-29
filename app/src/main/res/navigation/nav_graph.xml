@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/CurrentFragment">
+
+    <fragment
+        android:id="@+id/CurrentFragment"
+        android:name="com.example.rainreminderweatherforecast.ui.current_weather.CurrentWeatherFragment"
+        android:label="@string/fragment_label_current_weather"
+        tools:layout="@layout/fragment_current_weather">
+
+        <action
+            android:id="@+id/action_CurrentWeatherFragment_to_FutureWeatherListDaysFragment"
+            app:destination="@id/FutureFragment" />
+        <action
+            android:id="@+id/action_CurrentFragment_to_SettingsFragment"
+            app:destination="@id/SettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/FutureFragment"
+        android:name="com.example.rainreminderweatherforecast.ui.future_days_list.FutureWeatherListFragment"
+        android:label="@string/fragment_label_weather_forecast"
+        tools:layout="@layout/fragment_future_weather_list_days">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/CurrentFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_listReminderGoodWeatherFragment"
+            app:destination="@id/ReminderRainFragment" />
+        <action
+            android:id="@+id/action_FutureFragment_to_SettingsFragment"
+            app:destination="@id/SettingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReminderRainFragment"
+        android:name="com.example.rainreminderweatherforecast.ui.reminders_rain_days.ReminderRainDayFragment"
+        android:label="@string/fragment_label_remind_rain_days"
+        tools:layout="@layout/fragment_list_reminder_rain_day" />
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.example.rainreminderweatherforecast.ui.settings.SettingsFragment"
+        android:label="Settings" />
+</navigation>
