@@ -58,14 +58,16 @@ class ReminderRainDayFragment : Fragment(R.layout.fragment_list_reminder_rain_da
       adapterRainDay = ReminderDayRecyclerViewAdapter()
 
       recyclerViewReminderRainDay.apply {
+
          layoutManager = LinearLayoutManager(requireContext())
+
          val itemTouchHelper = ItemTouchHelper(object : ItemSwipeDelete() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                val date =
                   viewHolder.itemView.findViewById<TextView>(R.id.text_view_date_reminder).text.toString()
                val reminderId = getReminderId(date)
                viewModelReminder.cancelOnReminderRainDay(reminderId)
-               adapterRainDay.removeAt(viewHolder.adapterPosition)
+               adapterRainDay.removeAt(viewHolder.bindingAdapterPosition)
             }
 
             private fun getReminderId(date: String): Int {
@@ -73,8 +75,8 @@ class ReminderRainDayFragment : Fragment(R.layout.fragment_list_reminder_rain_da
                   remindersList.filter { it.date == date }[0].id
                } ?: 0
             }
-
          })
+
          itemTouchHelper.attachToRecyclerView(recyclerViewReminderRainDay)
          recyclerViewReminderRainDay.adapter = adapterRainDay
       }

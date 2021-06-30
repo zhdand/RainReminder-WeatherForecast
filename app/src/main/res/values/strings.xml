@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyWeatherApp</string>
+    <string name="app_name">Rain Reminder</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="fragment_label_current_weather">Current weather</string>
@@ -73,5 +73,6 @@
     <string name="button_reminders_clear_all">CLEAR ALL</string>
     <string name="notification_title">Reminder rain days</string>
     <string name="message_time_picker_enter_time_grater_than_current">Please enter a time greater than the current time</string>
+    <string name="stop_reminder_umbrella">Umbrella</string>
 
 </resources>
