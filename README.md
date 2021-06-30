@@ -28,12 +28,12 @@ When alarm is triggered, a notification and screen with a stop button are displa
 - Unit tests
 
 ## Screenshots:
-<img src="docs/pictures/1.png" width="250">
-<img src="docs/pictures/2.png" width="250">
-<img src="docs/pictures/3.png" width="250">
-<img src="docs/pictures/4.png" width="250">
-<img src="docs/pictures/5.png" width="250">
-<img src="docs/pictures/6_Internet_is_disconnected.png" width="250">
-<img src="docs/pictures/7.png" width="250">
+<img src="docs/1.png" width="250">
+<img src="docs/2.png" width="250">
+<img src="docs/3.png" width="250">
+<img src="docs/4.png" width="250">
+<img src="docs/5.png" width="250">
+<img src="docs/6_Internet_is_disconnected.png" width="250">
+<img src="docs/7.png" width="250">
 
 
