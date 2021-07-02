@@ -33,9 +33,11 @@ When alarm is triggered, a notification and screen with a stop button are displa
 <img src="docs/2.png" width="250">
 <img src="docs/3.png" width="250">
  </p>
+ 
+<p align="center">
 <img src="docs/4.png" width="250">
 <img src="docs/5.png" width="250">
 <img src="docs/6_Internet_is_disconnected.png" width="250">
 <img src="docs/7.png" width="250">
-
+</p>
 
