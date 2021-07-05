@@ -4,17 +4,12 @@ This application is intended to help people to cope with rainy weather.
 By sending automatic notifications about harsh weather conditions and things you might need to deal with them.
 Like an umbrella, windbreaker or rain boots.
 
-You just watch the forecast and for thous days when it is going to rain, you set the alarm for a certain time.
-In the settings you can choose either current devices location or specify the location manually. 
-If you don't want to allow this program device location permission, you simply set your location manually.
-In the settings you can set the time by default for reminder and the message that will be displayed on the screen 
-to stop reminder to take the umbrella.
-
-If the internet is lost, a message with red letters is appears at the top of the screen.
-When the internet appears, a request to the network is automatically executed.   
-
-In order to cancel one reminder from the list on the reminders screen, simply swipe it to the right.
-When alarm is triggered, a notification and screen with a stop button are displayed. 
+Features list:
+• rainy day notifications
+• location detection automatic or manual
+• customizable notification message and time
+• easy notification skip - just swipe the notification to the right or use the stop button when the alarm is triggered
+• automatic internet connection loss detection and notification.
 
 ### Technology:
 - Kotlin
