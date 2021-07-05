@@ -12,7 +12,7 @@ class StopReminderActivity : AppCompatActivity() {
 
       if (savedInstanceState == null) {
          supportFragmentManager.beginTransaction()
-            .replace(R.id.container, StopReminderFragment.newInstance())
+            .replace(R.id.container, StopReminderFragment())
             .commitNow()
       }
    }

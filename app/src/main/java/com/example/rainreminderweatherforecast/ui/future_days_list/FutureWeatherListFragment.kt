@@ -13,13 +13,13 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rainreminderweatherforecast.MyApp
 import com.example.rainreminderweatherforecast.R
 import com.example.rainreminderweatherforecast.databinding.FragmentFutureWeatherListDaysBinding
+import com.example.rainreminderweatherforecast.di.factory.ViewModelFactory
 import com.example.rainreminderweatherforecast.di.future_weather.FutureWeatherSubcomponent
 import com.example.rainreminderweatherforecast.domain.models.FutureWeather
 import com.example.rainreminderweatherforecast.domain.models.ReminderRainDay
@@ -44,8 +44,7 @@ class FutureWeatherListFragment : Fragment(),
    private val binding get() = _binding!!
 
    @Inject
-   lateinit var viewModelProviderFactory: ViewModelProvider.Factory
-
+   lateinit var viewModelProviderFactory: ViewModelFactory
    private val viewModel: FutureWeatherListViewModel by viewModels { viewModelProviderFactory }
 
    override fun onAttach(context: Context) {

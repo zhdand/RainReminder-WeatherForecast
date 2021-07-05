@@ -2,14 +2,15 @@ package com.example.rainreminderweatherforecast.ui.stop_reminder
 
 import android.content.Context
 import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import com.example.rainreminderweatherforecast.MyApp
 import com.example.rainreminderweatherforecast.R
+import com.example.rainreminderweatherforecast.di.factory.ViewModelFactory
 import com.example.rainreminderweatherforecast.service.AlarmService
 import com.google.android.material.button.MaterialButton
 import javax.inject.Inject
@@ -19,13 +20,9 @@ import javax.inject.Inject
  */
 class StopReminderFragment : Fragment(R.layout.stop_reminder_fragment) {
 
-  companion object {
-    fun newInstance() = StopReminderFragment()
-  }
-
   @Inject
-  lateinit var viewModelProviderFactory: ViewModelProvider.Factory
-  lateinit var viewModel: StopReminderViewModel
+  lateinit var viewModelProviderFactory: ViewModelFactory
+  private val viewModel: StopReminderViewModel by viewModels{viewModelProviderFactory}
 
   private lateinit var textViewMessage: TextView
   private lateinit var buttonOk: MaterialButton
@@ -41,8 +38,6 @@ class StopReminderFragment : Fragment(R.layout.stop_reminder_fragment) {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-
-    viewModel = ViewModelProvider(this, viewModelProviderFactory)[StopReminderViewModel::class.java]
 
     textViewMessage = view.findViewById(R.id.text_view_stop_reminder_message)
     buttonOk = view.findViewById(R.id.button_stop_reminder)
