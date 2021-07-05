@@ -5,6 +5,8 @@ By sending automatic notifications about harsh weather conditions and things you
 Like an umbrella, windbreaker or rain boots.
 
 ### Features list:
+- current weather display
+- weather forecast display
 - rainy day notifications
 - location detection automatic or manual
 - customizable notification message and time
